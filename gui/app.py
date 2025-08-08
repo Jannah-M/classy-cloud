@@ -54,7 +54,7 @@ left_column, middle_column, right_column = st.columns(3)
 
 # Or even better, call Streamlit functions inside a "with" block:
 with middle_column:
-    st.write(f"Upload your latest sunset picture, and let Classy do the thinking! She'll tell you exactly what kind of clouds are in the picture!")
+    st.write(f"Upload your latest cloud picture, and let Classy do the thinking! She'll tell you if it's a stratus, cumulus, or cirrus cloud!")
 
 
 uploaded_file = st.file_uploader("Choose a file")
