@@ -6,8 +6,7 @@ source_folder = "/Users/jannahmansoor/downloads/ccsn_v2"
 destination_folder = "data/sample_clouds"
 
 # Changing labels
-folders_to_copy = 
-{
+folders_to_copy = {
     "Cu": "cumulus",
     "Ci": "cirrus",
     "St": "stratus"
