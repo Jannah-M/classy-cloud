@@ -46,22 +46,25 @@ model = CloudCNN() # If you saved the state_dict
 model.load_state_dict(torch.load("cloud_cnn.pth"))
 model.eval() # Set model to evaluation mode
 
-st.title('Classy Cloud\'s Cloud Classifier')
+st.title('Classy Cloud\'s Cloud Classifier ⛅️')
 
 
 left_column, middle_column, right_column = st.columns(3)
 # You can use a column just like st.sidebar:
 
 # Or even better, call Streamlit functions inside a "with" block:
-with middle_column:
-    st.write(f"Upload your latest cloud picture, and let Classy do the thinking! She'll tell you if it's a stratus, cumulus, or cirrus cloud!")
+image = Image.open('gui/classy.png') # Replace 'my_image.jpg' with your image file path
+st.image(image, width=500)
+
+st.write(f"Upload an image of a cloud, and let Classy do the thinking! She'll tell you what kind of cloud formation is in the picture!")
 
 
-uploaded_file = st.file_uploader("Choose a file")
+uploaded_file = st.file_uploader("")
 if uploaded_file is not None:
     # To read file as bytes:
     image = Image.open(uploaded_file).convert("RGB")
     st.image(image, caption="Uploaded Cloud Pic", use_container_width=True)
+    
 
     transform = transforms.Compose([
         transforms.Resize((128, 128)),
@@ -77,4 +80,3 @@ if uploaded_file is not None:
 
     st.success(f"Your cloud is a {class_names[predicted.item()]}!")
 
-middle_column.button('Classify!')
