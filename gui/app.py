@@ -52,8 +52,8 @@ st.title('Classy Cloud\'s Cloud Classifier ⛅️')
 left_column, middle_column, right_column = st.columns(3)
 # You can use a column just like st.sidebar:
 
-# Or even better, call Streamlit functions inside a "with" block:
-image = Image.open('gui/classy.png') # Replace 'my_image.jpg' with your image file path
+with middle_column:
+    image = Image.open('gui/classyTitle.png') # Replace 'my_image.jpg' with your image file path
 st.image(image, width=500)
 
 st.write(f"Upload an image of a cloud, and let Classy do the thinking! She'll tell you what kind of cloud formation is in the picture!")
