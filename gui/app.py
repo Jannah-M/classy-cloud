@@ -53,6 +53,7 @@ left_column, middle_column, right_column = st.columns(3)
 # You can use a column just like st.sidebar:
 
 image = Image.open('gui/classyTitle.png') # Replace 'my_image.jpg' with your image file path
+st.image(image, size=600)
 
 
 st.write(f"Upload an image of a cloud, and let Classy do the thinking! She'll tell you what kind of cloud formation is in the picture!")
