@@ -43,7 +43,7 @@ class CloudCNN(nn.Module):
 
 
 model = CloudCNN() # If you saved the state_dict
-model.load_state_dict(torch.load("cloud_cnn.pth"))
+model.load_state_dict(torch.load("cloud_cnn.pth", map_location=torch.device("cpu")))
 model.eval() # Set model to evaluation mode
 
 st.title('Classy Cloud\'s Cloud Classifier ⛅️')
