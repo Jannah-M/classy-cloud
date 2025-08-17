@@ -6,15 +6,9 @@
       workflow_dispatch: 
 
     jobs:
-      empty-push:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout repository
-            uses: actions/checkout@v4
-
-          - name: Create empty commit
-            run: |
-              git config user.name "github-actions[bot]"
-              git config user.email "github-actions[bot]@users.noreply.github.com"
-              git commit --allow-empty -m "Keep Streamlit app alive"
-              git push
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send request to Streamlit app
+        run: |
+          curl -s -o /dev/null https://classycloud.streamlit.app
