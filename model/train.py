@@ -34,10 +34,11 @@ class CloudCNN(nn.Module):
         self.conv1 = nn.Conv2d(in_channels=3, out_channels=16, kernel_size=3)
         self.conv2 = nn.Conv2d(in_channels=16, out_channels=32, kernel_size=3)
 
-        self.fc1 = nn.Linear(28800, 64)   # fill in ??? later
+        self.fc1 = nn.Linear(28800, 64)   
         self.fc2 = nn.Linear(64, 3)     # 3 classes: cumulus, cirrus, stratus
 
     def forward(self, x):
+        
         # Convolution then ReLU then Pooling
         x = self.conv1(x)
         x = F.relu(x)
@@ -60,7 +61,7 @@ class CloudCNN(nn.Module):
 
 model = CloudCNN()
 
-num_epochs = 20
+num_epochs = 20 
 
 criterion = nn.CrossEntropyLoss()
 optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
@@ -69,14 +70,14 @@ avg = 0
 for epoch in range(num_epochs):
     avg = 0  # reset average loss for this epoch
     for images, labels in train_loader:
-        optimizer.zero_grad()       # clear gradients for THIS batch
+        optimizer.zero_grad()       # clear gradients for this batch
         outputs = model(images)     # forward pass
         loss = criterion(outputs, labels)  # calculate loss
         loss.backward()             # backpropagate
         optimizer.step()            # update weights
-        avg += loss.item()          # accumulate loss
+        avg += loss.item()          # update loss
 
-    print(f"Epoch {epoch+1}/{num_epochs}, Loss: {avg / len(train_loader):.4f}")
+    print(f"Epoch {epoch+1}/{num_epochs}, Loss: {avg / len(train_loader):.4f}") # print the epoch # and average loss
 
 torch.save(model.state_dict(), "cloud_cnn.pth")
 
