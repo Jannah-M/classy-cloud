@@ -27,7 +27,7 @@ Please note that this project is hosted using the free tier of Streamlit. This m
 - Architecture: Convolutional network (several conv and pooling layers, followed by dense layers)
 - Input size: 128 × 128 RGB images.
 - Output: 3-class classification (Cirrus / Cumulus / Stratus).
-- Saved weights: (`gui/cloud_cnn.pth`)
+- Saved weights: `gui/cloud_cnn.pth`
 - Trained on the Harvard Dataverse CCSN Database, cleaned and re-labeled by me (Liu, Pu, 2019, "Cirrus Cumulus Stratus Nimbus (CCSN) Database", https://doi.org/10.7910/DVN/CADDPD, Harvard Dataverse, V2)
 
 ## Local Setup
@@ -39,7 +39,7 @@ git clone https://github.com/Jannah-M/classy-cloud.git
 cd classy-cloud
 pip install -r requirements.txt
 streamlit run gui/app.py
-
+```
 ## **License**
 
 MIT License
@@ -48,5 +48,5 @@ MIT License
 
 Jannah Mansoor
 
-LinkedIn: Jannah Mansoor
+Feel free to contact me via [LinkedIn](https://www.linkedin.com/in/jannahmansoor/)!
 
