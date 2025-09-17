@@ -1,6 +1,6 @@
 # Classy Cloud 
 
-ClassyCloud is a simple web app that classifies cloud images into either Cirrus, Cumulus, or Stratus, using a PyTorch CNN model.  
+Classy Cloud is a web app that classifies cloud images into either Cirrus, Cumulus, or Stratus, using a PyTorch CNN model.  
 The app is built with Streamlit for the interface and deployed to [Streamlit Cloud](https://classycloud.streamlit.app).
 
 
